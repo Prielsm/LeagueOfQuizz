@@ -1,4 +1,5 @@
 rm migrations/V*
+
 ​php bin/console doctrine:database:drop --force --no-interaction
 ​php bin/console doctrine:database:create --no-interaction
 ​php bin/console make:migration --no-interaction
