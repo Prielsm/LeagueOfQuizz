@@ -23,12 +23,7 @@ class CustomFixtures extends Fixture
 
             $content = $file->getContents();
             $cnx->setAutoCommit(false);
-            $cnx->exec($content);
-            // dd();
-            // $cnx->commit();
-            // $manager->flush();
-            // $stmt = $cnx->prepare($content);
-            // $stmt->execute();    
+            $cnx->exec($content);  
         }
     }
 }
