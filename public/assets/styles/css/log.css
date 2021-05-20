@@ -1,0 +1,57 @@
+.login, .register {
+  height: 200vh;
+}
+.login h2, .register h2 {
+  margin: 20px;
+}
+.login label, .register label {
+  font-size: 20px;
+  display: block;
+  margin-top: 50px;
+}
+.login .iptForm, .register .iptForm {
+  color: black;
+  margin: 10px auto;
+  display: block;
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.login .submit, .register .submit {
+  font-size: 24px;
+  margin: 50px auto;
+  padding: 5px 20px;
+  border-radius: 15px;
+  border: white 2px solid;
+  background-color: transparent;
+  transition: background-color 0.7s, color 1s linear;
+}
+.login .submit:hover, .register .submit:hover {
+  background-color: white;
+  border-color: white;
+  color: #27273a;
+  cursor: pointer;
+}
+
+.content {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 0) {
+  .login, .register {
+    width: 90%;
+  }
+  .login .iptForm, .register .iptForm {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .login, .register {
+    width: 47%;
+  }
+  .login .iptForm, .register .iptForm {
+    width: 80%;
+  }
+}
+
+/*# sourceMappingURL=log.css.map */

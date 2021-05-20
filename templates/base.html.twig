@@ -2,7 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}LeagueOfQuizz{% endblock %}</title>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{asset('assets/fontawesome/css/all.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/styles/css/styles.css')}}">
+	    <link rel="stylesheet" href="{{asset('assets/styles/css/log.css')}}">
+	    <link rel="stylesheet" href="{{asset('assets/styles/css/profil.css')}}">
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
@@ -13,7 +18,39 @@
             {#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body class="flex">
+        <div class="menu lg:w-1/4 md:w-1/3">
+            <div class="logo flex">
+                <img src="{{asset('assets/images/lolLogo.png')}}" alt=""><span>LeagueOfQuizz</span>
+            </div>      
+            <div class='btn-nav flex {% block quizz %}{% endblock %}' ><i class="fas fa-puzzle-piece"></i><button><a href="{{ path ('quizz') }}">Quizz</a></button></div>
+            <div class='btn-nav flex {% block profil %}{% endblock %}'><i class="fas fa-user"></i><button><a href="{{ path ('profil') }}">Mon profil</a>
+                {# {% if not app.user %}
+                    <a href="{{ path ('security_login') }}">Mon profil</a>
+                {% else %}
+                    <a href="{{ path ('profil') }}">Mon profil</a>              
+                {% endif %} #}
+            </button></div>
+            <div class='btn-nav flex {% block log %}{% endblock %}'><i class="fas fa-sign-in-alt"></i><button>
+                {% if not app.user %}
+                    <a href="{{ path ('security_login') }}">Se connecter</a>
+                {% else %}
+                    <a href="{{ path ('security_logout') }}" style="color:red;">Déconnexion</a>               
+                {% endif %}
+            </button></div>
+            {% if not app.user %}
+                <a class="questionnaire" href="{{ path ('security_login') }}">
+            {% else %}                
+                <a class="questionnaire" href="{{ path ('questionnaire') }}">              
+            {% endif %}
+            <button>Modifier le questionnaire</button></a>
+        </div>
+        <div class="content lg:w-3/4 md:w-2/3" style={% block background %}{% endblock %}>
+            <header class="flex justify-between"><a href={% block path %}"{{ path ('quizz') }}"{% endblock %}>{% block nav %}{% endblock %}</a></header>
+            <main class="flex flex-wrap">
+                {% block body %}{% endblock %}
+            </main>
+        </div>
+        {# <script src="./src/script.js"></script> #}
     </body>
 </html>

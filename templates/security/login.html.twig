@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Se connecter{% endblock %}
+{% block nav %}Se connecter{% endblock %}
+{% block log %}active{% endblock %}
+{% block path %}"{{ path ('security_login') }}"{% endblock %}
+
+{% block background %}
+	"background-image: url('../assets/images/background3.png');"
+{% endblock %}
+
+{% block body %}
+<div class='create'>
+    <h2 class='title'>S'inscrire</h2>
+
+    <form action="{{ path('security_login') }}" method="post">
+        <div class="form-group">
+            <div>
+                <label for="" class="required">Pseudo</label>
+                <input type="text" class="form-control" placeholder="Entrer votre pseudo" name="_username">
+            </div>
+            <div>
+                <label for="" class="required">Mot de passe</label>
+                <input type="password" class="form-control" placeholder="Entrer votre mot de passe" name="_password">
+            </div>     
+        </div>
+        <button type="submit" class="submit">Se connecter</button>
+    </form>
+    <span class="path-login">Vous n'avez pas encore de compte ?</span><a href="{{ path('security_registration') }}" class="click">Cliquez ici</a>
+
+</div>
+
+
+
+{% endblock %}

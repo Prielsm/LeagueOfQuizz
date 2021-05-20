@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification des questions{% endblock %}
+{% block nav %}Modification des questions{% endblock %}
+{% block path %}"{{ path ('questionnaire') }}"{% endblock %}
+
+{% block background %}
+"background-image: url('../assets/images/background2.png');"
+{% endblock %}
+
+{% block body %}
+<div>
+    <h2 class='title'>{{ question.title }}</h2>
+    <div class="metadata">Catégorie : {{ question.category.title }}</div>
+    {% for answer in question.answers %}
+        {% if answer.status == '1' %}
+            <section class="answer-sect border-green">
+                {{ answer.title }}        
+            </section>
+        {% else %}
+            <section class="answer-sect border-red">
+                {{ answer.title }}        
+            </section>
+        {% endif %}    
+    {% endfor %}
+    <a href="{{ path('question_edit', {'id': question.id}) }}">Modifier</a>
+</div>
+
+{% endblock %}

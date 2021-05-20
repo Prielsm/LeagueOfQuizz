@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+{% block nav %}Inscription{% endblock %}
+{% block path %}"{{ path ('security_registration') }}"{% endblock %}
+
+{% block background %}
+	"background-image: url('../assets/images/background3.png');"
+{% endblock %}
+
+{% block body %}
+<div class='create'>
+    <h2 class='title'>S'inscrire</h2>
+
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_row(form.pseudo, {'label':'Pseudo', 'attr': {'placeholder': "Pseudonyme", 'class': 'form-control'}}) }}
+        {{ form_row(form.email, {'label':'Email','attr': {'placeholder': "Email", 'class': 'form-control'}}) }}
+        {{ form_row(form.password, {'label':'Mot de passe','attr': {'placeholder': "Mot de passe", 'class': 'form-control'}}) }}
+        {{ form_row(form.confirm_password, {'label':'Mot de passe','attr': {'placeholder': "Confirmation du mot de passe", 'class': 'form-control'}}) }}
+   
+    </div>
+    <button type="submit" class="submit">S'enregistrer</button>
+    {{ form_end(form) }}
+</div>
+
+
+{% endblock %}

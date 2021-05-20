@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LeagueOfQuizz - Profil{% endblock %}
+{% block profil %}active{% endblock %}
+{% block nav %}Profil{% endblock %}
+{% block path %}"{{ path ('profil') }}"{% endblock %}
+
+{% block background %}
+"background-image: url('../assets/images/background2.png');"
+{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{asset('assets/styles/css/profil.css')}}">
+
+<section class="rank">
+    <h2>RANK</h2>
+    <div class="content-profil">    
+    </div>
+</section>
+<section class="stats">
+    <h2>STATS</h2>
+    <div class="content-profil">
+        {{ games | length }} partie(s) jouée(s)     
+    </div>
+</section>
+<section class="historique">
+    <h2>HISTORIQUE</h2>
+    <div class="content-profil">
+        {% for game in games %}
+            <div><small>{{game.createdAt | date('d/m/Y H:i')}}</small>{{game.type | upper}} - {{game.score}}/5</div>
+        {% endfor %}
+    </div>
+    
+</section>
+<section class="unknown">
+    <h2>UNKNOWN</h2>
+    <div class="content-profil"></div>
+</section>
+{% endblock %}

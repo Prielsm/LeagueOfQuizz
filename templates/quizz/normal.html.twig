@@ -1,0 +1,13 @@
+{% extends '/quizz/quizz.html.twig' %}
+{% block nav %}Quizz - Modes - Normal{% endblock %}
+
+
+
+{% block body %}
+{# SEULE CATEGORIE FONCTIONNELLE #}
+<button class="choix-mult"><a href="{{ path('choix_mult') }}">Choix multiples</a></button>
+{# LES AUTRES CATEGORIES NE SONT PAS ENCORE CREES #}
+<button class="vrai-faux d-none">Vrai ou faux</button>
+<button class="qui-est d-none">Qui est-ce</button>
+<button class="cat-mix d-none">Mix des catégories</button>
+{% endblock %}

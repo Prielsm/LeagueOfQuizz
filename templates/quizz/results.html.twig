@@ -1,0 +1,26 @@
+{% extends '/quizz/quizz.html.twig' %}
+{% block nav %}Quizz - Modes - Normal - Choix multiples{% endblock %}
+{% block background %}
+"background-image: url('../../assets/images/background1.png');"
+{% endblock %}
+
+{% block body %}
+<section class="sect-quizz">
+<h1 class="title">Vous avez {{score}}/5 !</h1>
+
+{% for answer in answers %}
+    <span><strong>QUESTION {{loop.index}}/{{loop.length}}</strong> - </span><label class="quest-quizz">{{answer.question.title}}</label>
+
+    {% if answer.status %}
+    <div class="ipt-quizz border-green">Bonne réponse ! {{answer.title}}</div>
+    {% else %}
+    <div class="ipt-quizz border-red">Mauvaise réponse ! <span class="line">{{answer.title}}</span></div>
+    {% endif %}
+{% endfor %}
+
+{{message}}
+
+</section>
+    
+
+{% endblock %}

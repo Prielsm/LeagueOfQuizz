@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Questionnaire / Modifier une question{% endblock %}
+{% block nav %}Questionnaire / Modifier une question{% endblock %}
+
+{% block path %}"{{ path ('questionnaire') }}"{% endblock %}
+
+{% block background %}
+"background-image: url('../../assets/images/background2.png');"
+{% endblock %}
+
+{% block body %}
+<div class="create">
+
+    <h1 class='title'>Modification de la question n° {{ question.id }}</h1>   
+    {{ form_start(formQuestion)}}
+
+    <div class="form-group">
+        {{ form_row(formQuestion.title, {'attr': {'class': 'form-control'}}) }}
+        {{ form_row(formQuestion.category, {'attr': {'class': 'select-cat'}}) }}
+        
+        {% for answer in formQuestion.answers %}
+        <div class="answer-group">
+            {{ form_row(answer.title, {'label': 'Réponse' ,'attr': {'class': 'form-control'}}) }}
+            {{ form_row(answer.status, {'label': 'Correct ?'}) }}
+        </div>              
+        {% endfor %}
+    </div>
+
+    <button type="submit" class="submit">Enregistrer</button>
+    
+       
+    {{ form_end(formQuestion) }}
+
+</div>
+{% endblock %}

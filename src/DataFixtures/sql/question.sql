@@ -1,0 +1,11 @@
+-- INSERT INTO `question` (`id`, `title`, `category_id`) VALUES 
+-- (1, 'Quel champion est le: "Veilleur Lugubre" ?', '1'),
+-- (2, 'Akali, Shen et Kennen font tous trois partie de :', '1'),
+-- (3, 'Quel est le nom de l ulti à Khartus ?', '1'),
+-- (4, 'Qui a un skin Hot Rod ?', '1'),
+-- (5, 'Combien de boules tournent autour d`Aurelion Sol ?', '1'),
+-- (6, 'Combien de stacks de R Cho`Gath peut acquérir en ne mangeant que des creeps ?', '1'),
+-- (7, 'Quel sort d`Ahri applique un fear ?', '1'),
+-- (8, 'A combien de stacks de Mejai l`item nous donne de la vitesse de déplacement ?', '1'),
+-- (9, 'Quel champion a la plus grande vitesse de déplacement de base au lvl 18 ?', '1'),
+-- (10, 'Quel item du jeu est le plus cher ?', '1');

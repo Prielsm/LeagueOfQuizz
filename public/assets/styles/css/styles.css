@@ -1,0 +1,284 @@
+/* dependencies */
+@font-face {
+  font-family: Poppins-extralight;
+  src: url(../../fonts/Poppins-ExtraLight.ttf) format("truetype");
+}
+@font-face {
+  font-family: Poppins-light;
+  src: url(../../fonts/Poppins-Light.ttf) format("truetype");
+}
+@font-face {
+  font-family: Poppins-reg;
+  src: url(../../fonts/Poppins-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: Poppins-medium;
+  src: url(../../fonts/Poppins-Medium.ttf) format("truetype");
+}
+.active {
+  background-color: #707070;
+}
+
+.nonadmin {
+  display: table;
+  margin: 25% auto;
+  font-size: 30px;
+}
+
+.border-green {
+  border-color: #4e831a !important;
+}
+
+.border-red {
+  border-color: #801919 !important;
+}
+
+.line {
+  text-decoration: line-through;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.questionnaire, .submit {
+  border: 1px white solid;
+  display: table;
+  margin: 30px auto;
+  padding: 7px 20px;
+  border-radius: 15px;
+  transition: background-color 0.7s, color 1s linear;
+  font-size: 18px;
+}
+.questionnaire:hover, .submit:hover {
+  background-color: white;
+  color: #172026;
+}
+
+body {
+  color: white;
+  font-size: 23px;
+  font-family: Poppins-light;
+}
+body .menu {
+  background-color: #172026;
+  position: fixed;
+  height: 100vh;
+}
+body .menu .logo {
+  display: table;
+  margin: 0 auto;
+  padding: 20px 0px;
+  margin-bottom: 20px;
+}
+body .menu .logo img {
+  display: inline;
+  margin-bottom: 15px;
+  width: 40px;
+}
+body .menu .logo span {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-left: 15px;
+  text-shadow: rgba(255, 255, 255, 0.644) 1px 3px 12px;
+  font-size: 25px;
+}
+body .menu .btn-nav {
+  align-items: center;
+  padding-left: 20px;
+  border-bottom: #3b3b3b 1px solid;
+}
+body .menu .btn-nav:hover {
+  background-color: #707070;
+}
+body .menu .btn-nav button {
+  margin: 10px 25px;
+}
+body .content {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  height: auto;
+  min-height: 100vh;
+}
+body .content header {
+  background-color: rgba(134, 152, 166, 0.25);
+  padding: 20px 40px;
+  font-family: Poppins-extralight;
+  border-bottom: rgba(255, 255, 255, 0.308) 2px solid;
+}
+body .content header a, body .content header button {
+  cursor: pointer;
+}
+body .content main {
+  position: relative;
+}
+body .content main button, body .content main section {
+  background-color: rgba(134, 152, 166, 0.25);
+  border: rgba(255, 255, 255, 0.308) 2px solid;
+  text-align: center;
+  font-size: 30px;
+  margin: 5% auto;
+}
+body .content main .normal, body .content main .classe {
+  width: 500px;
+  height: 600px;
+}
+body .content main .choix-mult, body .content main .vrai-faux, body .content main .qui-est {
+  width: 280px;
+  height: 250px;
+  margin-bottom: 5%;
+}
+body .content main .cat-mix {
+  width: 700px;
+  height: 150px;
+  margin: 0 auto;
+}
+body .content main .quest-choix-mult, body .content main .quest-vrai-faux, body .content main .quest-qui-est, body .content main .quest-cat-mix {
+  margin-top: 5%;
+  width: 80%;
+  height: 450px;
+}
+body .content main .sect-quizz {
+  text-align: left;
+  font-size: 18px;
+  width: 90%;
+  padding: 20px;
+}
+body .content main .sect-quizz span {
+  color: #9c9c9c;
+}
+body .content main .sect-quizz label {
+  font-family: Poppins-reg;
+  margin-left: 5px;
+}
+body .content main .sect-quizz .ipt-quizz {
+  border: #a3a3a3 1px solid;
+  padding: 10px;
+  margin: 20px;
+}
+body .content main .sect-quizz .ipt-quizz input {
+  margin-right: 10px;
+}
+body main {
+  padding: 30px;
+}
+body main .title {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+body main .metadata {
+  font-size: 15px;
+}
+body main .questions {
+  padding-top: 130px;
+  position: relative;
+}
+body main .questions .create-quest {
+  position: absolute;
+  top: 20px;
+  left: 10%;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 20px;
+}
+body main .questions .question {
+  align-items: center;
+  width: 90%;
+  padding: 10px 30px;
+}
+body main .questions .question a {
+  font-size: 17px;
+}
+body main .questions .question a:hover {
+  text-decoration: underline;
+}
+body main .questions .question .btn-edit {
+  margin-left: 20px;
+}
+body main .answer-sect {
+  font-size: 18px;
+}
+body main .create {
+  text-align: left;
+  padding-left: 50px;
+  margin-bottom: 50px;
+}
+body main .create .form-group li {
+  color: #ec0000;
+  font-size: 14px;
+}
+body main .create .form-group .required {
+  color: #aaa9a9 !important;
+  font-size: 22px !important;
+}
+body main .create .form-group .form-control, body main .create .form-group .select-cat {
+  margin: 20px 0;
+  color: black;
+  padding: 0 10px;
+  margin-left: 25px;
+  border-radius: 5px;
+  font-size: 20px;
+  height: 40px;
+  font-size: 20px;
+  min-width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+body main .create .form-group .answer-group {
+  padding: 50px 200px;
+  margin-top: 30px;
+  border-top: #5c5c5c solid 1px;
+}
+body main .create .form-group .answer-group label {
+  font-size: 17px;
+  margin-right: 20px;
+}
+body main .create .submit {
+  font-size: 20px;
+}
+body main .create .path-login {
+  color: #aaa9a9;
+}
+body main .create .click {
+  margin-left: 10px;
+}
+body main .create .click:hover {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 0px) {
+  .menu {
+    display: none;
+  }
+
+  .content {
+    width: 100%;
+    height: 100vh;
+    margin-left: 0;
+  }
+
+  header {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .menu {
+    display: block;
+  }
+
+  .content {
+    margin-left: 33%;
+  }
+}
+@media screen and (min-width: 900px) and (min-width: 1024px) {
+  .content {
+    margin-left: 25%;
+  }
+
+  header {
+    font-size: 30px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

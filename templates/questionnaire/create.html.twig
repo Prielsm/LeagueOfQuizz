@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Questionnaire / Ajouter une question{% endblock %}
+{% block nav %}Questionnaire / Ajouter une question{% endblock %}
+
+{% block path %}"{{ path ('questionnaire') }}"{% endblock %}
+
+{% block background %}
+"background-image: url('../assets/images/background2.png');"
+{% endblock %}
+
+{% block body %}
+<div class="create">
+
+    <h1 class="title">Création d'une question</h1>   
+
+    {{ form_start(formQuestion)}}
+    <div class="form-group">
+        {{ form_row(formQuestion.title, {'attr': {'placeholder': "Titre de la question", 'class': 'form-control'}}) }}
+        {{ form_row(formQuestion.category, {'attr': {'class': 'select-cat'}}) }}
+        {% for answer in formQuestion.answers %}
+        <div class="answer-group">
+            {{ form_row(answer.title, {'label': 'Réponse' ,'attr': {'class': 'form-control'}}) }}
+            {{ form_row(answer.status, {'label': 'Correct ?'}) }}
+        </div>              
+        {% endfor %}
+
+   
+               
+    </div>
+    <button type="submit" class="submit">Créer</button>       
+    {{ form_end(formQuestion) }}
+</div>
+{% endblock %}

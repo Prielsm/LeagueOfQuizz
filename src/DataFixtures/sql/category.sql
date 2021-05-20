@@ -1,0 +1,4 @@
+-- INSERT INTO `category` (`id`, `title`) VALUES 
+-- (1, 'Choix multiples'),
+-- (2, 'Qui-est-ce'),
+-- (3, 'Vrai ou Faux');

@@ -1,0 +1,32 @@
+.content main .rank, .content main .stats, .content main .historique, .content main .unknown {
+  margin-top: 5%;
+  height: 35vh;
+  margin-bottom: 0;
+  padding: 10px 20px;
+}
+.content main .rank h2, .content main .stats h2, .content main .historique h2, .content main .unknown h2 {
+  margin: 10px;
+}
+.content main .rank .content-profil, .content main .stats .content-profil, .content main .historique .content-profil, .content main .unknown .content-profil {
+  font-size: 18px;
+}
+.content main .historique .content-profil {
+  text-align: left;
+}
+.content main .historique small {
+  margin-right: 20px;
+}
+
+@media screen and (min-width: 0) {
+  .rank, .stats, .historique, .unknown {
+    width: 400px;
+    height: 250px;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .rank, .stats, .historique, .unknown {
+    width: 40%;
+  }
+}
+
+/*# sourceMappingURL=profil.css.map */

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Questionnaire{% endblock %}
+{% block nav %}Questionnaire{% endblock %}
+{% block path %}"{{ path ('questionnaire') }}"{% endblock %}
+
+{% block background %}
+"background-image: url('../assets/images/background2.png');"
+{% endblock %}
+
+{% block body %}
+
+{# SI LA PERSONNE N'EST PAS ADMIN - MESSAGE POUR PREVENIR #}
+{% if app.user.access != 'admin' %}
+<div class="nonadmin">! Vous devez êtes admin pour avoir accès à cette partie du site !</div>
+{% else %}
+
+{# SI LA PERSONNE EST ADMIN - ACCES A LA PAGE #}
+<div class="questions">
+{% for question in questions %}
+    <section class="question flex justify-between">
+        <a href="{{ path('question_show', {'id': question.id})  }}"><span>{{ question.title }}</span></a>
+        <a href="{{ path('question_edit', {'id': question.id}) }}" class="btn-edit">Modifier</a>
+    </section>
+{% endfor %}
+<a href="{{ path('question_create') }}"><button class="create-quest">Créer une question</button></a>
+</div>
+{% endif %}
+
+{% endblock %}

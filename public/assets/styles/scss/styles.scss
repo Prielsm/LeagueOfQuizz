@@ -1,0 +1,311 @@
+/* dependencies */
+// @import "@fortawesome/fontawesome-free/css/all.css";
+// @import "tailwindcss/dist/tailwind.min.css";
+
+@font-face {
+  font-family: Poppins-extralight;
+  src: url(../../fonts/Poppins-ExtraLight.ttf) format("truetype");
+}
+@font-face {
+  font-family: Poppins-light;
+  src: url(../../fonts/Poppins-Light.ttf) format("truetype");
+}
+@font-face {
+  font-family: Poppins-reg;
+  src: url(../../fonts/Poppins-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: Poppins-medium;
+  src: url(../../fonts/Poppins-Medium.ttf) format("truetype");
+}
+
+$bg-color: rgba(134, 152, 166, 0.25);
+$border-color: rgba(255, 255, 255, 0.308) 2px solid;
+
+.active {
+  background-color: #707070;
+}
+
+.nonadmin {
+  display: table;
+  margin: 25% auto;
+  font-size: 30px;
+}
+
+.border-green {
+  border-color: rgb(78, 131, 26) !important;
+}
+.border-red {
+  border-color: rgb(128, 25, 25) !important;
+}
+.line {
+  text-decoration: line-through;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.questionnaire, .submit {
+  border: 1px white solid;
+  display: table;
+  margin: 30px auto;
+  padding: 7px 20px;
+  border-radius: 15px;
+  transition: background-color 0.7s, color 1s linear;
+  font-size: 18px;
+  &:hover {
+    background-color: white;
+    color: #172026;
+  }
+}
+
+body {
+  color: white;
+  font-size: 23px;
+  font-family: Poppins-light;
+  .menu {
+    background-color: #172026;
+    position: fixed;
+    height: 100vh;
+    .logo {
+      display: table;
+      margin: 0 auto;
+      padding: 20px 0px;    
+      margin-bottom: 20px;
+      img {
+        display: inline;
+        margin-bottom: 15px;
+        width: 40px;
+      }
+      span {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin-left: 15px;
+        text-shadow: rgba(255, 255, 255, 0.644) 1px 3px 12px;
+        font-size: 25px;
+      } 
+      
+    }
+    .btn-nav {
+      align-items: center;
+      padding-left: 20px;
+      border-bottom: #3b3b3b 1px solid;
+      &:hover {
+        background-color: #707070;
+      }
+      button {
+        margin: 10px 25px;
+      }
+    }
+    
+  }
+  //----------------------PAGE QUIZZ------------------------
+  .content {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: auto;
+    min-height: 100vh;
+    header {
+      background-color: $bg-color;
+      padding: 20px 40px;
+      font-family: Poppins-extralight;
+      border-bottom: $border-color;
+      a, button{
+        cursor: pointer;
+      }
+      
+    }
+    main {
+      position: relative;
+      button, section {
+        background-color: $bg-color;
+        border: $border-color;
+        text-align: center;
+        font-size: 30px;
+        margin: 5% auto;        
+      }
+      .normal, .classe {
+        width: 500px;
+        height: 600px;
+      }
+      .choix-mult, .vrai-faux, .qui-est{
+        width: 280px;
+        height: 250px;
+        margin-bottom: 5%;
+      }
+      .cat-mix {
+        width: 700px;
+        height: 150px;
+        margin: 0 auto;
+      }
+      .quest-choix-mult, .quest-vrai-faux, .quest-qui-est, .quest-cat-mix {
+        margin-top: 5%;
+        width: 80%;
+        height: 450px;
+      }
+
+      .sect-quizz {
+        text-align: left;
+        font-size: 18px;
+        width: 90%;
+        padding: 20px;
+        span {
+          color: rgb(156, 156, 156);
+        }
+        label {
+          font-family: Poppins-reg;
+          margin-left: 5px;
+        }
+        .ipt-quizz {
+          border: rgb(163, 163, 163) 1px solid;
+          padding: 10px;
+          margin: 20px;
+          input {
+            margin-right: 10px;
+          }
+        }
+        
+      }
+
+      
+      
+      
+    }
+  }
+
+  //--------------------PAGE FORMULAIRE QUESTION
+  main {
+    padding: 30px;
+    
+    .title {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+    .metadata {
+      font-size: 15px;
+    }
+    .questions {
+      padding-top: 130px;
+      position: relative;
+      .create-quest {
+        position: absolute;
+        top: 20px;
+        left: 10%;
+        padding: 10px 20px;
+        border-radius: 15px;
+        font-size: 20px;
+      }
+      .question {
+        align-items: center;
+        width: 90%;
+        padding: 10px 30px;
+        a {
+          font-size: 17px;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+        .btn-edit {
+          margin-left: 20px;
+        }
+      }
+    }
+
+    //PAGE SHOW QUESTION
+    .answer-sect {
+      font-size: 18px;
+    }
+    
+    //PAGE CREATE 
+    .create {
+      text-align: left;
+      padding-left: 50px;
+      margin-bottom: 50px;
+
+      .form-group {
+        li {
+          color: rgb(236, 0, 0);
+          font-size: 14px;
+        }
+        .required {
+          color: rgb(170, 169, 169) !important;
+          font-size: 22px !important;
+        }
+        .form-control, .select-cat {
+          margin: 20px 0;
+          color: black;
+          padding: 0 10px;
+          margin-left: 25px;
+          border-radius: 5px;
+          font-size: 20px;
+          height: 40px;
+          font-size: 20px;
+          min-width: 400px;
+          display: flex;
+          justify-content: space-between;
+          
+        }
+        .answer-group {
+          padding: 50px 200px;
+          margin-top: 30px;
+          border-top: rgb(92, 92, 92) solid 1px;
+          label {
+            font-size: 17px;
+            margin-right: 20px;
+          }
+        }
+      }
+      .submit {
+        font-size: 20px;
+      }
+      .path-login {
+        color: rgb(170, 169, 169);
+      }
+      .click {
+        margin-left: 10px;    
+        &:hover {    
+          text-decoration: underline;
+        }
+
+      }
+    }
+
+    
+    
+
+  }
+  
+}
+
+ @media screen and (min-width: 0px) {
+   .menu {
+     display: none;
+   }
+   .content {
+     width: 100%;
+     height: 100vh;
+     margin-left: 0;
+   }
+   header {
+    font-size: 22px;
+
+   }
+ }
+ @media screen and (min-width: 900px) {
+   .menu {
+     display: block;    
+   }
+  .content {
+    margin-left: 33%;
+  }
+  @media screen and (min-width: 1024px) {
+   .content {
+     margin-left: 25%;
+   }   
+   header {
+    font-size: 30px;
+   }
+  }
+}

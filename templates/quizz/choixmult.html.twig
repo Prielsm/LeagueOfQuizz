@@ -1,0 +1,29 @@
+{% extends '/quizz/quizz.html.twig' %}
+{% block nav %}Quizz - Modes - Normal - Choix multiples{% endblock %}
+{% block background %}
+"background-image: url('../../assets/images/background1.png');"
+{% endblock %}
+
+{% block body %}
+<section class="sect-quizz">
+<form action="{{path('results_quizz')}}" method="post"> 
+{% for question in questions %}
+        <span><strong>QUESTION {{loop.index}}/{{loop.length}}</strong> - </span><label class="quest-quizz">{{question.title}}</label>
+        <fieldset id="group{{loop.index}}">
+        {% for answer in question.answers %}
+            {% if loop.index == 1 %}
+            <div class="ipt-quizz"><input type="radio" name="group{{loop.parent.loop.index}}" value="{{answer.id}}" checked>{{answer.title}}</div>              
+            {% else %}
+            <div class="ipt-quizz"><input type="radio" name="group{{loop.parent.loop.index}}" value="{{answer.id}}">{{answer.title}}</div>              
+                
+            {% endif %}
+        
+        {% endfor %}
+        </fieldset>
+{% endfor %}
+<button type="submit" class="submit">Envoyer</button>
+</form>
+</section>
+    
+
+{% endblock %}
